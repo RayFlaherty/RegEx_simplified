@@ -146,9 +146,15 @@
 
 ### Greedy and Lazy Match
 
+    A Greedy and Lazy match extends the lessons in the quantifier field. A greedy match tries to match an element as MANY times as possible. A lazy match attempts to do so as FEW times as possible. 
+
+    Let's use the Greedy expression \b.*([0-9]{4})\b and apply it to the numbers 1112223333 and 3992991999. Withing the boundaries set, it is looking for any four digit numbers. The regular expression fails to match the first number because the * quantifier tries to match the previous element as many times as possible in the entire string, and so it finds its match at the end of the string.
+
+    Now lets make this lazy, and funny enough, work better for us. Same string, just add a ? after the *. \b.*([0-9]{4})\b. Now apply to the same numbers and they should both populate. Why? In most cases, regular expressions with greedy and lazy quantifiers return the same matches. They most commonly return different results when they are used with the wildcard (.) Meta Character, which matches any character.
+
 ### Boundaries
 
-WORD BOUNDARIES \b, REFER TO ANCHORS IN VIDEO 2 
+    A word boundary is indicated with a \b. It is considered as an anchor. It is used in pairs and indicates a whole word must be between them. For instance. \b\w+\b would result in any full word or expression. Whitespace to whitespace basically. The return result wouldn't produce any string that is already set withing another word. The word must meet all the parameters set withing the expression. 
 
 ### Back-references
 
@@ -157,6 +163,13 @@ WORD BOUNDARIES \b, REFER TO ANCHORS IN VIDEO 2
 
 ### Look-ahead and Look-behind
 
+    Also referred to as Look-Arounds. A lookahead or  lookbehind does not "consume" any characters on the string. This means that after the lookahead or lookbehind's closing parenthesis, the regex engine is left standing on the very same spot in the string from which it started looking: it hasn't moved. From that position, then engine can start matching characters again, or, why not, look ahead (or behind) for something else—a useful technique, as we'll later see.
+
+    Look Ahead- (?=...) Asserts that what immediately follows the current position is the string is ...
+    Look Behind - (?<=...) Asserts that what immediately precedes the current position in the string is ...
+
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+The author of this project is Raymond Flaherty. A dedicated student and loving father of three beautiful children. You can find his git hub information at
+
+### [Raymond Flaherty](https://github.com/RayFlaherty)

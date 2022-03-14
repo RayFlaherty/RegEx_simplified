@@ -23,6 +23,16 @@
 
 ## Regex Components
 
+    A quick table of contents for letters for reference later in the material. Don't worry if you don't understand them completely now, it will make since later. But here is a list of Meta Characters and what they do.
+
+        Character List:
+            \d  -  references all digits, 0-9
+            \w  -  references all word characters, A-Z, a-z, and 0-9,
+            \s  -  references all whitespace (areas with no value or character set)
+            .   -  references any character what-so-ever
+            \W  -  references anything NOT a word character.
+            \S  -  references anything NOT whitespace. 
+
 ### Anchors 
     The first component I would like to cover has very little to do with text at all. An ANCHOR refers to the position of a character, in this case either the beginning or end of a line. The meta characters that govern these requests are the caret(^), indicating the beginning of a line, and the dollar sign ($), indicating the end of a line.  
 
@@ -38,7 +48,25 @@
  
 
 ### Quantifiers
-    Quantifiers specify how many instances of a character, group, or character class mush be present in the input for a match to be foun    d. 
+    Quantifiers specify how many instances of a character, group, or character class mush be present in the input for a match to be found. Quantifiers are further broken down into "Lazy and Greedy" quantifiers. We will look more into those later. But for now, lets go over the basic strokes. 
+
+    As stated, the quantifier basically points out how MANY of the Meta Characters in a string you want to search. But what do they look like?
+    Examples of quantifiers:
+        * - looks for zero or more characters in a string;
+            Example: \w* returns all words that contain more than zero characters in it. 
+
+        + - looks for one or more characters in a string;
+            Example: \d looks for all digits that contain one or more numbers.
+
+        ? - returns 0 or 1,
+            Example: \w? looks for all words between 0-1 characters.
+
+        {x,y} - allows you to search by giving a min and max number of characters to search for.
+            Example: {3, 5} searches for all strings who's lengths are between 3 and five.
+
+        {n} - looks for an exact number, were n is represented by a number. 
+            Example: \w{5} searches for all five letter words.
+
 
 ### OR Operator
 
